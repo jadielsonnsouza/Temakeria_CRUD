@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Temakeria_CRUD
 {
-    public partial class Form1 : Form
+    public partial class wf_temakeria : Form
     {
-        public Form1()
+        public wf_temakeria()
         {
             InitializeComponent();
         }

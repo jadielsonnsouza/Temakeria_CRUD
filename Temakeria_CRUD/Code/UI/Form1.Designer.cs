@@ -1,6 +1,6 @@
 ﻿namespace Temakeria_CRUD
 {
-    partial class Form1
+    partial class wf_temakeria
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // wf_temakeria
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "wf_temakeria";
+            this.Text = "Temakeria";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
