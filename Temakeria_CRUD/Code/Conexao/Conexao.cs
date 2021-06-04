@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Temakeria_CRUD.Code.DAL
+namespace Temakeria_CRUD.Code.Conexao
 {
-    class FuncionarioDAL
+    class Conexao
     {
     }
 }
