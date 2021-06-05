@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Temakeria_CRUD.Code.BLL
+namespace Temakeria_CRUD.Code.Classes
 {
-    class FuncionarioBLL
+    class Funcionario : Pessoa
     {
+
     }
 }
