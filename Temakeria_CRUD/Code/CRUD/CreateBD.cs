@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Temakeria_CRUD.Code.Classes;
 using Temakeria_CRUD.Code.ConexaoBD;
 
 namespace Temakeria_CRUD.Code.CRUD
 {
-    class Create
+    public class CreateBD
     {
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();

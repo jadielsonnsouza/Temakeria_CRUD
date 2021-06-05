@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Temakeria_CRUD.Code.CRUD;
 
 namespace Temakeria_CRUD.Code.Classes
 {
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
-        Create criarCliente = new Create();
+        CreateBD criaCliente = new CreateBD();
 
         public Cliente(string nome, DateTime dataNascimento, string rg, string cpf, string rua, 
                        string numero, string complemento, string bairro, string cidade, string estado,
