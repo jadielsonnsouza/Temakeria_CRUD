@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Temakeria_CRUD.Code.UI;
 
 namespace Temakeria_CRUD
 {
@@ -17,5 +18,16 @@ namespace Temakeria_CRUD
             InitializeComponent();
         }
 
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Chama o formulário de cadastro AddPessoa
+            AddPessoa adicionaPessoa = new AddPessoa();
+            adicionaPessoa.ShowDialog();
+        }
     }
 }

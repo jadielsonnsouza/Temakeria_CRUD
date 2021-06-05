@@ -58,6 +58,8 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Editar = new System.Windows.Forms.Button();
             this.btn_Deletar = new System.Windows.Forms.Button();
             this.btn_Limpar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.msk_dataNascimento = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -151,7 +153,7 @@ namespace Temakeria_CRUD.Code.UI
             // 
             this.txt_Endereco.Location = new System.Drawing.Point(94, 240);
             this.txt_Endereco.Name = "txt_Endereco";
-            this.txt_Endereco.Size = new System.Drawing.Size(404, 23);
+            this.txt_Endereco.Size = new System.Drawing.Size(162, 23);
             this.txt_Endereco.TabIndex = 61;
             // 
             // lbl_Endereco
@@ -188,6 +190,7 @@ namespace Temakeria_CRUD.Code.UI
             this.msk_Celular.Name = "msk_Celular";
             this.msk_Celular.Size = new System.Drawing.Size(161, 23);
             this.msk_Celular.TabIndex = 57;
+            this.msk_Celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Celular
             // 
@@ -206,6 +209,7 @@ namespace Temakeria_CRUD.Code.UI
             this.msk_Telefone.Name = "msk_Telefone";
             this.msk_Telefone.Size = new System.Drawing.Size(161, 23);
             this.msk_Telefone.TabIndex = 55;
+            this.msk_Telefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_Telefone
             // 
@@ -263,6 +267,7 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Cadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Cadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Cadastrar.UseVisualStyleBackColor = true;
+            this.btn_Cadastrar.Click += new System.EventHandler(this.btn_Cadastrar_Click);
             // 
             // btn_Salvar
             // 
@@ -275,6 +280,7 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Salvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Salvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
             // btn_Buscar
             // 
@@ -324,11 +330,32 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Limpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Limpar.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(256, 242);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Data Nasc";
+            // 
+            // msk_dataNascimento
+            // 
+            this.msk_dataNascimento.Location = new System.Drawing.Point(336, 239);
+            this.msk_dataNascimento.Mask = "00/00/0000";
+            this.msk_dataNascimento.Name = "msk_dataNascimento";
+            this.msk_dataNascimento.Size = new System.Drawing.Size(162, 23);
+            this.msk_dataNascimento.TabIndex = 79;
+            this.msk_dataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // AddPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 356);
+            this.Controls.Add(this.msk_dataNascimento);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Limpar);
             this.Controls.Add(this.btn_Deletar);
             this.Controls.Add(this.btn_Editar);
@@ -396,5 +423,7 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.Button btn_Deletar;
         private System.Windows.Forms.Button btn_Limpar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox msk_dataNascimento;
     }
 }
