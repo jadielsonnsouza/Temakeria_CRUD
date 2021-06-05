@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace Temakeria_CRUD.Code.Conexao
+namespace Temakeria_CRUD.Code.ConexaoBD
 {
-    class Conexao
+    public class Conexao
     {
         string conexaoSql = @"Data Source=DESKTOP-U8NKSVS\SQLEXPRESS;Initial Catalog=Temakeria_CRUD;Integrated Security=True";
 
