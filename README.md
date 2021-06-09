@@ -1,9 +1,9 @@
-# 🚧 Temakeria_CRUD 🚧
-CRUD de uma temakeria
+# 🚧 Temakeria_CRUD - Em Construção🚧
 
-A idéia deste projeto é o desenvolvimento de uma aplicação para uma temakeria, na qual será possível cadastrar funcionários, cliente, refeições.
+Este projeto está em desenvolvimento, projeto CRUD de uma Temakeria.
+Será abordado a criação de cliente, funcionários, no banco de dados, consultas, atualização de cadastro e o delete do cliente ou funcionário da temakeria;
 
-Tecnologia
+### Tecnologia que está sendo utiilizada no projeto:
 
 - C#
 - SQL Server
