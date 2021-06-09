@@ -293,6 +293,7 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Buscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // btn_Editar
             // 
@@ -329,6 +330,7 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Limpar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Limpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
             // label1
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Temakeria_CRUD.Code.Classes;
+using Temakeria_CRUD.Code.CRUD;
 
 namespace Temakeria_CRUD.Code.UI
 {
@@ -17,20 +18,51 @@ namespace Temakeria_CRUD.Code.UI
         {
             InitializeComponent();
 
-            txt_Nome.Enabled = false;
-            msk_Telefone.Enabled = false;
-            msk_Celular.Enabled = false;
-            txt_Email.Enabled = false;
-            txt_Endereco.Enabled = false;
-            msk_dataNascimento.Enabled = false;
-            txt_Numero.Enabled = false;
-            txt_Bairro.Enabled = false;
-            txt_RG.Enabled = false;
-            txt_CPF.Enabled = false;
+            desabilitaTetBox();
         }
 
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
+            habilitaTextBox();
+        }
+
+        private void btn_Salvar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
+            cliente.InserirCliente();
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            ConsultaCadastro consultaCadastro = new ConsultaCadastro(txt_Pesquisar.Text);
+
+            habilitaTextBox();
+
+            txt_Nome.Text = Convert.ToString(consultaCadastro.Nome);
+            msk_dataNascimento.Text = Convert.ToString(consultaCadastro.DataNascimento);
+            txt_RG.Text = Convert.ToString(consultaCadastro.Rg);
+            txt_CPF.Text = Convert.ToString(consultaCadastro.Cpf);
+        }
+        private void btn_Limpar_Click(object sender, EventArgs e)
+        {
+            txt_Pesquisar.Text = string.Empty;
+            txt_Nome.Text = string.Empty;
+            msk_Telefone.Text = string.Empty;
+            msk_Celular.Text = string.Empty;
+            txt_Email.Text = string.Empty;
+            txt_Endereco.Text = string.Empty;
+            msk_dataNascimento.Text = string.Empty;
+            txt_Numero.Text = string.Empty;
+            txt_Bairro.Text = string.Empty;
+            txt_RG.Text = string.Empty;
+            txt_CPF.Text = string.Empty;
+
+            desabilitaTetBox();
+        }
+
+        private void habilitaTextBox()
+        {
+            txt_Pesquisar.Enabled = true;
             txt_Nome.Enabled = true;
             msk_Telefone.Enabled = false;
             msk_Celular.Enabled = false;
@@ -43,10 +75,18 @@ namespace Temakeria_CRUD.Code.UI
             txt_CPF.Enabled = true;
         }
 
-        private void btn_Salvar_Click(object sender, EventArgs e)
+        private void desabilitaTetBox()
         {
-            Cliente cliente = new Cliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
-            cliente.InserirCliente();
+            txt_Nome.Enabled = false;
+            msk_Telefone.Enabled = false;
+            msk_Celular.Enabled = false;
+            txt_Email.Enabled = false;
+            txt_Endereco.Enabled = false;
+            msk_dataNascimento.Enabled = false;
+            txt_Numero.Enabled = false;
+            txt_Bairro.Enabled = false;
+            txt_RG.Enabled = false;
+            txt_CPF.Enabled = false;
         }
     }
 }
