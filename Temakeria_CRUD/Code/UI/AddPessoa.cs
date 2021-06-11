@@ -62,9 +62,9 @@ namespace Temakeria_CRUD.Code.UI
 
         private void habilitaTextBox()
         {
-            txt_Pesquisar.Enabled = true;
+            txt_Pesquisar.Enabled = false;
             txt_Nome.Enabled = true;
-            msk_Telefone.Enabled = false;
+            msk_Telefone.Enabled = true;
             msk_Celular.Enabled = false;
             txt_Email.Enabled = false;
             txt_Endereco.Enabled = false;
@@ -77,6 +77,7 @@ namespace Temakeria_CRUD.Code.UI
 
         private void desabilitaTetBox()
         {
+            txt_Pesquisar.Enabled = true;
             txt_Nome.Enabled = false;
             msk_Telefone.Enabled = false;
             msk_Celular.Enabled = false;

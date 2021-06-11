@@ -77,6 +77,7 @@ namespace Temakeria_CRUD.Code.UI
             this.txt_CPF.Name = "txt_CPF";
             this.txt_CPF.Size = new System.Drawing.Size(161, 23);
             this.txt_CPF.TabIndex = 69;
+            this.txt_CPF.MaxLength = 11;
             // 
             // lbl_Pesquisar_Nome
             // 
@@ -104,6 +105,7 @@ namespace Temakeria_CRUD.Code.UI
             this.txt_RG.Name = "txt_RG";
             this.txt_RG.Size = new System.Drawing.Size(161, 23);
             this.txt_RG.TabIndex = 67;
+            this.txt_RG.MaxLength = 9;
             // 
             // lbl_RG
             // 
