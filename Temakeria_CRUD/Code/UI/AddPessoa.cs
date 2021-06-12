@@ -28,7 +28,8 @@ namespace Temakeria_CRUD.Code.UI
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
+            Cliente cliente = new Cliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text,
+                                          msk_Celular.Text, msk_Telefone.Text, txt_Email.Text);
             cliente.InserirCliente();
         }
 
@@ -65,8 +66,8 @@ namespace Temakeria_CRUD.Code.UI
             txt_Pesquisar.Enabled = false;
             txt_Nome.Enabled = true;
             msk_Telefone.Enabled = true;
-            msk_Celular.Enabled = false;
-            txt_Email.Enabled = false;
+            msk_Celular.Enabled = true;
+            txt_Email.Enabled = true;
             txt_Endereco.Enabled = false;
             msk_dataNascimento.Enabled = true;
             txt_Numero.Enabled = false;

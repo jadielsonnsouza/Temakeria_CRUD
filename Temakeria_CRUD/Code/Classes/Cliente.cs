@@ -25,18 +25,25 @@ namespace Temakeria_CRUD.Code.Classes
             this.Email = email;
         }*/
 
-        public Cliente(string nome, string dataNascimento, string rg, string cpf)
+        public Cliente(string nome, string dataNascimento, string rg, string cpf,
+                       string celular, string telefone, string email)
         {
             this.Nome = nome;
             this.DataNascimento = dataNascimento;
             this.Rg = rg;
             this.Cpf = cpf;
+            this.Celular = celular;
+            this.Telefone = telefone;
+            this.Email = email;
         }
 
         public void InserirCliente()
         {
-            InsereCadastro insereCadastroBD = new InsereCadastro();
-            insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf);
+            InsereTabelaContato insereTabelaContato = new InsereTabelaContato();
+            insereTabelaContato.insereTabelaContato(this.Celular, this.Telefone, this.Email);
+
+            //InsereCadastro insereCadastroBD = new InsereCadastro();
+            //insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf);
         }
     }
 }
