@@ -44,9 +44,6 @@ namespace Temakeria_CRUD.Code.UI
             this.lbl_Endereco = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.lbl_Email = new System.Windows.Forms.Label();
-            this.msk_Celular = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Celular = new System.Windows.Forms.Label();
-            this.msk_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Telefone = new System.Windows.Forms.Label();
             this.txt_Nome = new System.Windows.Forms.TextBox();
             this.lbl_Nome = new System.Windows.Forms.Label();
@@ -60,6 +57,9 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Limpar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.msk_dataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Celular = new System.Windows.Forms.TextBox();
+            this.lbl_Celular = new System.Windows.Forms.Label();
+            this.txt_Telefone = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -74,10 +74,10 @@ namespace Temakeria_CRUD.Code.UI
             // txt_CPF
             // 
             this.txt_CPF.Location = new System.Drawing.Point(337, 297);
+            this.txt_CPF.MaxLength = 11;
             this.txt_CPF.Name = "txt_CPF";
             this.txt_CPF.Size = new System.Drawing.Size(161, 23);
             this.txt_CPF.TabIndex = 69;
-            this.txt_CPF.MaxLength = 11;
             // 
             // lbl_Pesquisar_Nome
             // 
@@ -102,10 +102,10 @@ namespace Temakeria_CRUD.Code.UI
             // txt_RG
             // 
             this.txt_RG.Location = new System.Drawing.Point(94, 297);
+            this.txt_RG.MaxLength = 9;
             this.txt_RG.Name = "txt_RG";
             this.txt_RG.Size = new System.Drawing.Size(161, 23);
             this.txt_RG.TabIndex = 67;
-            this.txt_RG.MaxLength = 9;
             // 
             // lbl_RG
             // 
@@ -184,34 +184,6 @@ namespace Temakeria_CRUD.Code.UI
             this.lbl_Email.Size = new System.Drawing.Size(52, 20);
             this.lbl_Email.TabIndex = 58;
             this.lbl_Email.Text = "E-Mail";
-            // 
-            // msk_Celular
-            // 
-            this.msk_Celular.Location = new System.Drawing.Point(337, 182);
-            this.msk_Celular.Mask = "(00)00000-0000";
-            this.msk_Celular.Name = "msk_Celular";
-            this.msk_Celular.Size = new System.Drawing.Size(161, 23);
-            this.msk_Celular.TabIndex = 57;
-            this.msk_Celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txt_Celular
-            // 
-            this.txt_Celular.AutoSize = true;
-            this.txt_Celular.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Celular.Location = new System.Drawing.Point(276, 185);
-            this.txt_Celular.Name = "txt_Celular";
-            this.txt_Celular.Size = new System.Drawing.Size(55, 20);
-            this.txt_Celular.TabIndex = 56;
-            this.txt_Celular.Text = "Celular";
-            // 
-            // msk_Telefone
-            // 
-            this.msk_Telefone.Location = new System.Drawing.Point(94, 182);
-            this.msk_Telefone.Mask = "(00)0000-0000";
-            this.msk_Telefone.Name = "msk_Telefone";
-            this.msk_Telefone.Size = new System.Drawing.Size(161, 23);
-            this.msk_Telefone.TabIndex = 55;
-            this.msk_Telefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_Telefone
             // 
@@ -353,11 +325,42 @@ namespace Temakeria_CRUD.Code.UI
             this.msk_dataNascimento.TabIndex = 79;
             this.msk_dataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txt_Celular
+            // 
+            this.txt_Celular.Location = new System.Drawing.Point(336, 182);
+            this.txt_Celular.Name = "txt_Celular";
+            this.txt_Celular.Size = new System.Drawing.Size(161, 23);
+            this.txt_Celular.TabIndex = 80;
+            this.txt_Celular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Celular.MaxLength = 11;
+            // 
+            // lbl_Celular
+            // 
+            this.lbl_Celular.AutoSize = true;
+            this.lbl_Celular.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Celular.Location = new System.Drawing.Point(278, 185);
+            this.lbl_Celular.Name = "lbl_Celular";
+            this.lbl_Celular.Size = new System.Drawing.Size(55, 20);
+            this.lbl_Celular.TabIndex = 81;
+            this.lbl_Celular.Text = "Celular";
+            // 
+            // txt_Telefone
+            // 
+            this.txt_Telefone.Location = new System.Drawing.Point(94, 182);
+            this.txt_Telefone.Name = "txt_Telefone";
+            this.txt_Telefone.Size = new System.Drawing.Size(161, 23);
+            this.txt_Telefone.TabIndex = 82;
+            this.txt_Telefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_Telefone.MaxLength = 10;
+            // 
             // AddPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 356);
+            this.Controls.Add(this.txt_Telefone);
+            this.Controls.Add(this.lbl_Celular);
+            this.Controls.Add(this.txt_Celular);
             this.Controls.Add(this.msk_dataNascimento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Limpar);
@@ -381,9 +384,6 @@ namespace Temakeria_CRUD.Code.UI
             this.Controls.Add(this.lbl_Endereco);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.lbl_Email);
-            this.Controls.Add(this.msk_Celular);
-            this.Controls.Add(this.txt_Celular);
-            this.Controls.Add(this.msk_Telefone);
             this.Controls.Add(this.lbl_Telefone);
             this.Controls.Add(this.txt_Nome);
             this.Controls.Add(this.lbl_Nome);
@@ -413,9 +413,6 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.Label lbl_Endereco;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label lbl_Email;
-        private System.Windows.Forms.MaskedTextBox msk_Celular;
-        private System.Windows.Forms.Label txt_Celular;
-        private System.Windows.Forms.MaskedTextBox msk_Telefone;
         private System.Windows.Forms.Label lbl_Telefone;
         private System.Windows.Forms.TextBox txt_Nome;
         private System.Windows.Forms.Label lbl_Nome;
@@ -429,5 +426,8 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox msk_dataNascimento;
+        private System.Windows.Forms.TextBox txt_Celular;
+        private System.Windows.Forms.Label lbl_Celular;
+        private System.Windows.Forms.TextBox txt_Telefone;
     }
 }

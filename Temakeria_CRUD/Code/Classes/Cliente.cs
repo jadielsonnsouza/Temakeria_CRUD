@@ -39,11 +39,11 @@ namespace Temakeria_CRUD.Code.Classes
 
         public void InserirCliente()
         {
-            InsereTabelaContato insereTabelaContato = new InsereTabelaContato();
+            TabelaContato insereTabelaContato = new TabelaContato();
             insereTabelaContato.insereTabelaContato(this.Celular, this.Telefone, this.Email);
 
-            //InsereCadastro insereCadastroBD = new InsereCadastro();
-            //insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf);
+            TabelaPessoa insereCadastroBD = new TabelaPessoa();
+            insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf, insereTabelaContato.Id_Contato);
         }
     }
 }

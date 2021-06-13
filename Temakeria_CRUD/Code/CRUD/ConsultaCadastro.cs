@@ -16,36 +16,31 @@ namespace Temakeria_CRUD.Code.CRUD
         public string DataNascimento { get; set; }
         public string Rg { get; set; }
         public string Cpf { get; set; }
+        public string Celular { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
 
-        SqlCommand cmd = new SqlCommand();
-        Conexao conexaoBD = new Conexao();
-
-        public ConsultaCadastro(string pesquisar)
+        public void consultaCadastro(string pesquisar)
         {
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexaoBD = new Conexao();
+
             //Comando Select
             cmd.CommandText = "select * from Pessoa where nome = @pesquisar";
-
             cmd.Parameters.AddWithValue("@pesquisar", pesquisar);
+            conexaoBD.consultaConsultaBD(cmd, "consulta_cadastro");
+            retornaString(conexaoBD);
+        }
 
-            try
-            {
-                // conectar com o BD(INSTACIAR CLASSE CONEXAO)
-                cmd.Connection = conexaoBD.conectar();
-
-                SqlDataReader leituraDados = cmd.ExecuteReader();
-                leituraDados.Read();
-
-                this.Nome = Convert.ToString(leituraDados["Nome"]);
-                this.DataNascimento = Convert.ToString(leituraDados["data_nascimento"]);
-                this.Rg = Convert.ToString(leituraDados["rg"]);
-                this.Cpf = Convert.ToString(leituraDados["cpf"]);
-
-                conexaoBD.desconectar();
-            }
-            catch (Exception e)
-            {
-                this.Mensagem = e.Message;
-            }
+        private void retornaString(Conexao conexaoBD)
+        {
+            this.Nome = conexaoBD.Nome;
+            this.DataNascimento = conexaoBD.DataNascimento;
+            this.Rg = conexaoBD.Rg;
+            this.Cpf = conexaoBD.Cpf;
+            this.Celular = conexaoBD.Celular;
+            this.Telefone = conexaoBD.Telefone;
+            this.Email = conexaoBD.Email;
         }
     }
 }

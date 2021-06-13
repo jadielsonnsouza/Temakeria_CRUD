@@ -8,7 +8,6 @@ namespace Temakeria_CRUD.Code.Classes
 {
     public class Pessoa
     {
-        private string nome, rg, cpf, dataNascimento;
         public string Nome { get; set; }
         public string DataNascimento { get; set; }
         public string Rg { get; set; }
