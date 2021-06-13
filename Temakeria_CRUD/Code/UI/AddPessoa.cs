@@ -37,7 +37,7 @@ namespace Temakeria_CRUD.Code.UI
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
             ConsultaCadastro consultaCadastro = new ConsultaCadastro();
-            consultaCadastro.consultaCadastro(txt_Pesquisar.Text);
+            consultaCadastro.consultaCadastro(txt_Pesquisar.Text, "pesquisa_usuario");
             habilitaTextBox();
             txt_Nome.Text = Convert.ToString(consultaCadastro.Nome);
             msk_dataNascimento.Text = Convert.ToString(consultaCadastro.DataNascimento);

@@ -19,28 +19,50 @@ namespace Temakeria_CRUD.Code.CRUD
         public string Celular { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
+        public int Id_Contato { get; set; }
 
-        public void consultaCadastro(string pesquisar)
+        public void consultaCadastro(string pesquisar, string tipoPesquisa)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexaoBD = new Conexao();
 
-            //Comando Select
-            cmd.CommandText = "select * from Pessoa where nome = @pesquisar";
-            cmd.Parameters.AddWithValue("@pesquisar", pesquisar);
-            conexaoBD.consultaConsultaBD(cmd, "consulta_cadastro");
-            retornaString(conexaoBD);
+            switch (tipoPesquisa)
+            {
+                case "pesquisa_usuario":
+                    //Comando Select
+                    cmd.CommandText = "select * from Pessoa where nome = @pesquisar";
+                    cmd.Parameters.AddWithValue("@pesquisar", pesquisar);
+                    conexaoBD.consultaConsultaBD(cmd, "consulta_cadastro");
+                    retornaString(conexaoBD, "pesquisa_usuario");
+                    break;
+
+                case "pesquisa_id_contato":
+                    //Comando Select
+                    cmd.CommandText = "select * from Contato where email = @email";
+                    cmd.Parameters.AddWithValue("@email", pesquisar);
+                    conexaoBD.consultaConsultaBD(cmd, "consulta_tabela_contato");
+                    retornaString(conexaoBD, "idContato");
+                    break;
+            }
+            
         }
 
-        private void retornaString(Conexao conexaoBD)
+        private void retornaString(Conexao conexaoBD, string tipoPesquisa)
         {
-            this.Nome = conexaoBD.Nome;
-            this.DataNascimento = conexaoBD.DataNascimento;
-            this.Rg = conexaoBD.Rg;
-            this.Cpf = conexaoBD.Cpf;
-            this.Celular = conexaoBD.Celular;
-            this.Telefone = conexaoBD.Telefone;
-            this.Email = conexaoBD.Email;
+            if (tipoPesquisa == "pesquisa_usuario")
+            {
+                this.Nome = conexaoBD.Nome;
+                this.DataNascimento = conexaoBD.DataNascimento;
+                this.Rg = conexaoBD.Rg;
+                this.Cpf = conexaoBD.Cpf;
+                this.Celular = conexaoBD.Celular;
+                this.Telefone = conexaoBD.Telefone;
+                this.Email = conexaoBD.Email;
+            } 
+            else if(tipoPesquisa == "idContato")
+            {
+                this.Id_Contato = conexaoBD.Id_Contato;
+            }
         }
     }
 }
