@@ -29,9 +29,14 @@ namespace Temakeria_CRUD.Code.UI
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = new Cliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text,
-                                          txt_Celular.Text, txt_Telefone.Text, txt_Email.Text);
-            cliente.InserirCliente();
+            Pessoa pessoa = new Pessoa();
+            pessoa.adicionaCliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
+
+            Endereco endereco = new Endereco();
+            endereco.adicionaEndereco(txt_Endereco.Text, txt_Numero.Text, txt_Bairro.Text);
+
+            Contato contato = new Contato();
+            contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
