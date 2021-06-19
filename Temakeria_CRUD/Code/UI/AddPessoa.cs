@@ -21,40 +21,36 @@ namespace Temakeria_CRUD.Code.UI
 
             desabilitaTetBox();
         }
-
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
             habilitaTextBox();
         }
-
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
             /*Cria o objeto do tipo pessoa 
              * e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
+            
             Pessoa pessoa = new Pessoa();
             pessoa.adicionaCliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
+            //Endereco endereco = new Endereco();
+            //endereco.adicionaEndereco(txt_Endereco.Text, txt_Numero.Text, txt_Bairro.Text);
 
-
-            Endereco endereco = new Endereco();
-            endereco.adicionaEndereco(txt_Endereco.Text, txt_Numero.Text, txt_Bairro.Text);
-
-            Contato contato = new Contato();
-            contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
+            //Contato contato = new Contato();
+            //contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
         }
-
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            ConsultaCadastro consultaCadastro = new ConsultaCadastro();
+            /*ConsultaCadastro consultaCadastro = new ConsultaCadastro();
             consultaCadastro.consultaCadastro(txt_Pesquisar.Text, "pesquisa_usuario");
             habilitaTextBox();
             txt_Nome.Text = Convert.ToString(consultaCadastro.Nome);
             msk_dataNascimento.Text = Convert.ToString(consultaCadastro.DataNascimento);
             txt_RG.Text = Convert.ToString(consultaCadastro.Rg);
-            txt_CPF.Text = Convert.ToString(consultaCadastro.Cpf);
+            txt_CPF.Text = Convert.ToString(consultaCadastro.Cpf);*/
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
@@ -72,14 +68,13 @@ namespace Temakeria_CRUD.Code.UI
 
             desabilitaTetBox();
         }
-
         private void habilitaTextBox()
         {
             txt_Pesquisar.Enabled = false;
             txt_Nome.Enabled = true;
-            txt_Telefone.Enabled = true;
-            txt_Celular.Enabled = true;
-            txt_Email.Enabled = true;
+            txt_Telefone.Enabled = false;
+            txt_Celular.Enabled = false;
+            txt_Email.Enabled = false;
             txt_Endereco.Enabled = false;
             msk_dataNascimento.Enabled = true;
             txt_Numero.Enabled = false;
@@ -87,7 +82,6 @@ namespace Temakeria_CRUD.Code.UI
             txt_RG.Enabled = true;
             txt_CPF.Enabled = true;
         }
-
         private void desabilitaTetBox()
         {
             txt_Pesquisar.Enabled = true;

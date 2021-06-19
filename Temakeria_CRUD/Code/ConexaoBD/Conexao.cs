@@ -38,7 +38,8 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             }
         }
 
-        public void executaConexao(SqlCommand cmd)
+        private string mensagem = "";
+        public string executaConexao(SqlCommand cmd)
         {
             try
             {
@@ -52,11 +53,13 @@ namespace Temakeria_CRUD.Code.ConexaoBD
                 desconectar();
 
                 //mostra msg de erro ou sucesso
-                //this.Mensagem = "Cadastrado com Sucesso!";
+                mensagem = "Cadastrado com Sucesso!";
+                return mensagem;
             }
             catch (SqlException e)
             {
-                //this.Mensagem = "Erro ao tentar se conectar com o Banco de Dados";
+                mensagem = "Erro ao tentar se conectar com o Banco de Dados";
+                return mensagem;
             }
         }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using Temakeria_CRUD.Code.CRUD;
 
 namespace Temakeria_CRUD.Code.Classes
 {
@@ -20,7 +19,7 @@ namespace Temakeria_CRUD.Code.Classes
 
         public void InserirCliente()
         {
-            ConsultaCadastro consultaCadastro = new ConsultaCadastro();
+            /*ConsultaCadastro consultaCadastro = new ConsultaCadastro();
             
             TabelaContato insereTabelaContato = new TabelaContato();
             insereTabelaContato.insereTabelaContato(this.Celular, this.Telefone, this.Email);
@@ -28,7 +27,7 @@ namespace Temakeria_CRUD.Code.Classes
             int idContato = Convert.ToInt32(consultaCadastro.Id_Contato);
 
             TabelaPessoa insereCadastroBD = new TabelaPessoa();
-            insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf, idContato);
+            insereCadastroBD.CadastrarBD(this.Nome, this.DataNascimento, this.Rg, this.Cpf, idContato);*/
         }
     }
 }

@@ -7,8 +7,10 @@ namespace Temakeria_CRUD.Code.CRUD
 {
     public class TabelaPessoa
     {
+        public string Mensagem { get; }
+
         private string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf) " +
-                                                           "values (@nome, @data_nascimento, @rg, @cpf";
+                                                           "values (@nome, @data_nascimento, @rg, @cpf)";
 
         public TabelaPessoa(Pessoa pessoa)
         {
@@ -23,7 +25,9 @@ namespace Temakeria_CRUD.Code.CRUD
             cmd.Parameters.AddWithValue("@rg", pessoa.Rg);
             cmd.Parameters.AddWithValue("@cpf", pessoa.Cpf);
 
-            conexaoBD.executaConexao(cmd);
+            this.Mensagem = conexaoBD.executaConexao(cmd);
         }
+
+        
     }
 }

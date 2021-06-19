@@ -11,7 +11,7 @@ namespace Temakeria_CRUD.Code.CRUD
 {
     class ConsultaCadastro
     {
-        public string Mensagem { get; set; }
+        /*public string Mensagem { get; set; }
         public string Nome { get; set; }
         public string DataNascimento { get; set; }
         public string Rg { get; set; }
@@ -63,6 +63,6 @@ namespace Temakeria_CRUD.Code.CRUD
             {
                 this.Id_Contato = conexaoBD.Id_Contato;
             }
-        }
+        }*/
     }
 }
