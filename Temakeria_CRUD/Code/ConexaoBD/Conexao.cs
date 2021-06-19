@@ -11,23 +11,11 @@ namespace Temakeria_CRUD.Code.ConexaoBD
 {
     public class Conexao
     {
-        public string Mensagem { get; set; }
-        public string Nome { get; set; }
-        public string DataNascimento { get; set; }
-        public string Rg { get; set; }
-        public string Cpf { get; set; }
-        public string Celular { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
-        public int Id_Contato { get; set; }
-
-
-        string conexaoSql = @"Data Source=DESKTOP-U8NKSVS\SQLEXPRESS;Initial Catalog=Temakeria_CRUD;Integrated Security=True";
-
         SqlConnection conexaoBD = new SqlConnection();
 
         public Conexao()
         {
+            string conexaoSql = @"Data Source=DESKTOP-U8NKSVS\SQLEXPRESS;Initial Catalog=Temakeria_CRUD;Integrated Security=True";
             conexaoBD.ConnectionString = conexaoSql;
         }
 
@@ -64,15 +52,15 @@ namespace Temakeria_CRUD.Code.ConexaoBD
                 desconectar();
 
                 //mostra msg de erro ou sucesso
-                this.Mensagem = "Cadastrado com Sucesso!";
+                //this.Mensagem = "Cadastrado com Sucesso!";
             }
             catch (SqlException e)
             {
-                this.Mensagem = "Erro ao tentar se conectar com o Banco de Dados";
+                //this.Mensagem = "Erro ao tentar se conectar com o Banco de Dados";
             }
         }
 
-        public void consultaConsultaBD(SqlCommand cmd, string tabela)
+        /*public void consultaConsultaBD(SqlCommand cmd, string tabela)
         {
             try
             {
@@ -111,6 +99,6 @@ namespace Temakeria_CRUD.Code.ConexaoBD
         private void consultaIdContato(SqlDataReader leituraDados)
         {
             this.Id_Contato = Convert.ToInt32(leituraDados["Id"]);
-        }
+        }*/
     }
 }

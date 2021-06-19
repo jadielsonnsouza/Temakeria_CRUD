@@ -29,8 +29,15 @@ namespace Temakeria_CRUD.Code.UI
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+            /*Cria o objeto do tipo pessoa 
+             * e chama método da classe tabela pessoa 
+             * para add uma pessoa no BD
+             */
             Pessoa pessoa = new Pessoa();
             pessoa.adicionaCliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
+            TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
+
+
 
             Endereco endereco = new Endereco();
             endereco.adicionaEndereco(txt_Endereco.Text, txt_Numero.Text, txt_Bairro.Text);
