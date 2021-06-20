@@ -68,16 +68,25 @@ namespace Temakeria_CRUD.Code.UI
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
             txt_Pesquisar.Text = string.Empty;
+
             txt_Nome.Text = string.Empty;
-            txt_Telefone.Text = string.Empty;
-            txt_Celular.Text = string.Empty;
-            txt_Email.Text = string.Empty;
-            txt_Endereco.Text = string.Empty;
             dtp_DataNascimento.Text = string.Empty;
-            txt_Numero.Text = string.Empty;
-            txt_Bairro.Text = string.Empty;
             txt_RG.Text = string.Empty;
             txt_CPF.Text = string.Empty;
+            rdb_Masculino.Checked = false;
+            rdb_Feminino.Checked = false;
+            rdb_Outros.Checked = false;
+
+            txt_Email.Text = string.Empty;
+            txt_Telefone.Text = string.Empty;
+            txt_Celular.Text = string.Empty;
+
+            txt_Endereco.Text = string.Empty;
+            txt_Numero.Text = string.Empty;
+            txt_Complemento.Text = string.Empty;
+            txt_Bairro.Text = string.Empty;
+            txt_Cidade.Text = string.Empty;
+            cmb_Estado.Text = string.Empty;
 
             desabilitaTetBox();
         }
