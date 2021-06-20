@@ -47,13 +47,11 @@ namespace Temakeria_CRUD.Code.UI
                                       txt_Bairro.Text,
                                       txt_Cidade.Text,
                                       cmb_Estado.Text);
-            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
-            MessageBox.Show(insereTabelaEndereco.Mensagem);
+            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);            
 
-            
-
-            //Contato contato = new Contato();
-            //contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
+            Contato contato = new Contato();
+            contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
+            TabelaContato insereTabelaContato = new TabelaContato(contato);
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -102,9 +100,9 @@ namespace Temakeria_CRUD.Code.UI
             rdb_Feminino.Enabled = true;
             rdb_Outros.Enabled = true;
 ;
-            txt_Email.Enabled = false;
-            txt_Telefone.Enabled = false;
-            txt_Celular.Enabled = false;
+            txt_Email.Enabled = true;
+            txt_Telefone.Enabled = true;
+            txt_Celular.Enabled = true;
 
             txt_Endereco.Enabled = true;
             txt_Numero.Enabled = true;

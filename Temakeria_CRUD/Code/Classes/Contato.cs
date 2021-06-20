@@ -12,7 +12,9 @@ namespace Temakeria_CRUD.Code.Classes
         public string Celular { get; private set; }
         public string Email { get; private set; }
 
-        public void adicionaContato(string telefone, string celular, string email)
+        public void adicionaContato(string telefone,
+                                    string celular,
+                                    string email)
         {
             this.Telefone = telefone;
             this.Celular = celular;
