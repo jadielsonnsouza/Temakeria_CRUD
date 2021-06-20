@@ -34,11 +34,20 @@ namespace Temakeria_CRUD.Code.UI
              */
             
             Pessoa pessoa = new Pessoa();
-            pessoa.adicionaCliente(txt_Nome.Text, msk_dataNascimento.Text, txt_RG.Text, txt_CPF.Text);
+            pessoa.adicionaCliente(txt_Nome.Text,
+                                   msk_dataNascimento.Text,
+                                   txt_RG.Text,
+                                   txt_CPF.Text);
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
-            //Endereco endereco = new Endereco();
-            //endereco.adicionaEndereco(txt_Endereco.Text, txt_Numero.Text, txt_Bairro.Text);
+            Endereco endereco = new Endereco();
+            endereco.adicionaEndereco(txt_Endereco.Text,
+                                      txt_Numero.Text,
+                                      txt_Complemento.Text,
+                                      txt_Bairro.Text,
+                                      txt_Cidade.Text,
+                                      txt_Estado.Text);
+            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
 
             //Contato contato = new Contato();
             //contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
@@ -82,12 +91,12 @@ namespace Temakeria_CRUD.Code.UI
             txt_Telefone.Enabled = false;
             txt_Celular.Enabled = false;
 
-            txt_Endereco.Enabled = false;
-            txt_Numero.Enabled = false;
-            txt_Complemento.Enabled = false;
-            txt_Bairro.Enabled = false;
-            txt_Cidade.Enabled = false;
-            txt_Estado.Enabled = false;
+            txt_Endereco.Enabled = true;
+            txt_Numero.Enabled = true;
+            txt_Complemento.Enabled = true;
+            txt_Bairro.Enabled = true;
+            txt_Cidade.Enabled = true;
+            txt_Estado.Enabled = true;
         }
         private void desabilitaTetBox()
         {
