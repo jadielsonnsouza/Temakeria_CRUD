@@ -15,6 +15,7 @@ namespace Temakeria_CRUD.Code.UI
 {
     public partial class AddPessoa : Form
     {
+
         public AddPessoa()
         {
             InitializeComponent();
@@ -71,30 +72,43 @@ namespace Temakeria_CRUD.Code.UI
         private void habilitaTextBox()
         {
             txt_Pesquisar.Enabled = false;
+
             txt_Nome.Enabled = true;
-            txt_Telefone.Enabled = false;
-            txt_Celular.Enabled = false;
-            txt_Email.Enabled = false;
-            txt_Endereco.Enabled = false;
             msk_dataNascimento.Enabled = true;
-            txt_Numero.Enabled = false;
-            txt_Bairro.Enabled = false;
             txt_RG.Enabled = true;
             txt_CPF.Enabled = true;
+
+            txt_Email.Enabled = false;
+            txt_Telefone.Enabled = false;
+            txt_Celular.Enabled = false;
+
+            txt_Endereco.Enabled = false;
+            txt_Numero.Enabled = false;
+            txt_Complemento.Enabled = false;
+            txt_Bairro.Enabled = false;
+            txt_Cidade.Enabled = false;
+            txt_Estado.Enabled = false;
         }
         private void desabilitaTetBox()
         {
             txt_Pesquisar.Enabled = true;
+
             txt_Nome.Enabled = false;
-            txt_Telefone.Enabled = false;
-            txt_Celular.Enabled = false;
-            txt_Email.Enabled = false;
-            txt_Endereco.Enabled = false;
             msk_dataNascimento.Enabled = false;
-            txt_Numero.Enabled = false;
-            txt_Bairro.Enabled = false;
             txt_RG.Enabled = false;
             txt_CPF.Enabled = false;
+
+            txt_Email.Enabled = false;
+            txt_Telefone.Enabled = false;
+            txt_Celular.Enabled = false;
+            
+            txt_Endereco.Enabled = false;
+            txt_Numero.Enabled = false;
+            txt_Complemento.Enabled = false;
+            txt_Bairro.Enabled = false;
+            txt_Cidade.Enabled = false;
+            txt_Estado.Enabled = false;
+            
         }
     }
 }
