@@ -52,26 +52,32 @@ namespace Temakeria_CRUD.Code.UI
             this.btn_Deletar = new System.Windows.Forms.Button();
             this.btn_Limpar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.msk_dataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.txt_Celular = new System.Windows.Forms.TextBox();
             this.lbl_Celular = new System.Windows.Forms.Label();
             this.txt_Telefone = new System.Windows.Forms.TextBox();
             this.lbl_Endereco = new System.Windows.Forms.Label();
             this.txt_Endereco = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_Estado = new System.Windows.Forms.ComboBox();
             this.lbl_Bairro = new System.Windows.Forms.Label();
-            this.txt_Estado = new System.Windows.Forms.TextBox();
             this.lbl_Estado = new System.Windows.Forms.Label();
             this.txt_Cidade = new System.Windows.Forms.TextBox();
             this.lbl_Cidade = new System.Windows.Forms.Label();
             this.txt_Complemento = new System.Windows.Forms.TextBox();
             this.lbl_Complemento = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rdb_Outros = new System.Windows.Forms.RadioButton();
+            this.rdb_Feminino = new System.Windows.Forms.RadioButton();
+            this.rdb_Masculino = new System.Windows.Forms.RadioButton();
+            this.lbl_Sexo = new System.Windows.Forms.Label();
+            this.dtp_DataNascimento = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -292,15 +298,6 @@ namespace Temakeria_CRUD.Code.UI
             this.label1.TabIndex = 78;
             this.label1.Text = "Data Nasc";
             // 
-            // msk_dataNascimento
-            // 
-            this.msk_dataNascimento.Location = new System.Drawing.Point(83, 48);
-            this.msk_dataNascimento.Mask = "00/00/0000";
-            this.msk_dataNascimento.Name = "msk_dataNascimento";
-            this.msk_dataNascimento.Size = new System.Drawing.Size(162, 23);
-            this.msk_dataNascimento.TabIndex = 79;
-            this.msk_dataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txt_Celular
             // 
             this.txt_Celular.Location = new System.Drawing.Point(329, 51);
@@ -348,8 +345,8 @@ namespace Temakeria_CRUD.Code.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmb_Estado);
             this.groupBox1.Controls.Add(this.lbl_Bairro);
-            this.groupBox1.Controls.Add(this.txt_Estado);
             this.groupBox1.Controls.Add(this.lbl_Estado);
             this.groupBox1.Controls.Add(this.txt_Cidade);
             this.groupBox1.Controls.Add(this.lbl_Cidade);
@@ -367,6 +364,43 @@ namespace Temakeria_CRUD.Code.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Endereço";
             // 
+            // cmb_Estado
+            // 
+            this.cmb_Estado.FormattingEnabled = true;
+            this.cmb_Estado.Items.AddRange(new object[] {
+            "",
+            "Acre (AC)",
+            "Alagoas (AL)",
+            "Amapá (AP)",
+            "Amazonas (AM)",
+            "Bahia (BA)",
+            "Ceará (CE)",
+            "Distrito Federal (DF)",
+            "Espírito Santo (ES)",
+            "Goiás (GO)",
+            "Maranhão (MA)",
+            "Mato Grosso (MT)",
+            "Mato Grosso do Sul (MS)",
+            "Minas Gerais (MG)",
+            "Pará (PA)",
+            "Paraíba (PB)",
+            "Paraná (PR)",
+            "Pernambuco (PE)",
+            "Piauí (PI)",
+            "Rio de Janeiro (RJ)",
+            "Rio Grande do Norte (RN)",
+            "Rio Grande do Sul (RS)",
+            "Rondônia (RO)",
+            "Roraima (RR)",
+            "Santa Catarina (SC)",
+            "São Paulo (SP)",
+            "Sergipe (SE)",
+            "Tocantins (TO)"});
+            this.cmb_Estado.Location = new System.Drawing.Point(325, 79);
+            this.cmb_Estado.Name = "cmb_Estado";
+            this.cmb_Estado.Size = new System.Drawing.Size(163, 23);
+            this.cmb_Estado.TabIndex = 71;
+            // 
             // lbl_Bairro
             // 
             this.lbl_Bairro.AutoSize = true;
@@ -376,13 +410,6 @@ namespace Temakeria_CRUD.Code.UI
             this.lbl_Bairro.Size = new System.Drawing.Size(49, 20);
             this.lbl_Bairro.TabIndex = 70;
             this.lbl_Bairro.Text = "Bairro";
-            // 
-            // txt_Estado
-            // 
-            this.txt_Estado.Location = new System.Drawing.Point(325, 80);
-            this.txt_Estado.Name = "txt_Estado";
-            this.txt_Estado.Size = new System.Drawing.Size(161, 23);
-            this.txt_Estado.TabIndex = 69;
             // 
             // lbl_Estado
             // 
@@ -430,13 +457,15 @@ namespace Temakeria_CRUD.Code.UI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.lbl_Sexo);
+            this.groupBox2.Controls.Add(this.dtp_DataNascimento);
             this.groupBox2.Controls.Add(this.txt_Nome);
             this.groupBox2.Controls.Add(this.lbl_Nome);
             this.groupBox2.Controls.Add(this.txt_RG);
             this.groupBox2.Controls.Add(this.lbl_RG);
             this.groupBox2.Controls.Add(this.txt_CPF);
             this.groupBox2.Controls.Add(this.lbl_CPF);
-            this.groupBox2.Controls.Add(this.msk_dataNascimento);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(11, 170);
             this.groupBox2.Name = "groupBox2";
@@ -444,6 +473,67 @@ namespace Temakeria_CRUD.Code.UI
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Pessoais";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rdb_Outros);
+            this.panel1.Controls.Add(this.rdb_Feminino);
+            this.panel1.Controls.Add(this.rdb_Masculino);
+            this.panel1.Location = new System.Drawing.Point(327, 48);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(161, 23);
+            this.panel1.TabIndex = 82;
+            // 
+            // rdb_Outros
+            // 
+            this.rdb_Outros.AutoSize = true;
+            this.rdb_Outros.Location = new System.Drawing.Point(92, 3);
+            this.rdb_Outros.Name = "rdb_Outros";
+            this.rdb_Outros.Size = new System.Drawing.Size(61, 19);
+            this.rdb_Outros.TabIndex = 2;
+            this.rdb_Outros.TabStop = true;
+            this.rdb_Outros.Text = "Outros";
+            this.rdb_Outros.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Feminino
+            // 
+            this.rdb_Feminino.AutoSize = true;
+            this.rdb_Feminino.Location = new System.Drawing.Point(55, 3);
+            this.rdb_Feminino.Name = "rdb_Feminino";
+            this.rdb_Feminino.Size = new System.Drawing.Size(31, 19);
+            this.rdb_Feminino.TabIndex = 1;
+            this.rdb_Feminino.TabStop = true;
+            this.rdb_Feminino.Text = "F";
+            this.rdb_Feminino.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Masculino
+            // 
+            this.rdb_Masculino.AutoSize = true;
+            this.rdb_Masculino.Location = new System.Drawing.Point(13, 3);
+            this.rdb_Masculino.Name = "rdb_Masculino";
+            this.rdb_Masculino.Size = new System.Drawing.Size(36, 19);
+            this.rdb_Masculino.TabIndex = 0;
+            this.rdb_Masculino.TabStop = true;
+            this.rdb_Masculino.Text = "M";
+            this.rdb_Masculino.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Sexo
+            // 
+            this.lbl_Sexo.AutoSize = true;
+            this.lbl_Sexo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Sexo.Location = new System.Drawing.Point(277, 51);
+            this.lbl_Sexo.Name = "lbl_Sexo";
+            this.lbl_Sexo.Size = new System.Drawing.Size(41, 20);
+            this.lbl_Sexo.TabIndex = 81;
+            this.lbl_Sexo.Text = "Sexo";
+            // 
+            // dtp_DataNascimento
+            // 
+            this.dtp_DataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_DataNascimento.Location = new System.Drawing.Point(84, 48);
+            this.dtp_DataNascimento.Name = "dtp_DataNascimento";
+            this.dtp_DataNascimento.Size = new System.Drawing.Size(161, 23);
+            this.dtp_DataNascimento.TabIndex = 80;
             // 
             // groupBox4
             // 
@@ -497,6 +587,8 @@ namespace Temakeria_CRUD.Code.UI
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -529,7 +621,6 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.Button btn_Deletar;
         private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox msk_dataNascimento;
         private System.Windows.Forms.TextBox txt_Celular;
         private System.Windows.Forms.Label lbl_Celular;
         private System.Windows.Forms.TextBox txt_Telefone;
@@ -538,7 +629,6 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_Complemento;
         private System.Windows.Forms.Label lbl_Complemento;
-        private System.Windows.Forms.TextBox txt_Estado;
         private System.Windows.Forms.Label lbl_Estado;
         private System.Windows.Forms.TextBox txt_Cidade;
         private System.Windows.Forms.Label lbl_Cidade;
@@ -546,5 +636,12 @@ namespace Temakeria_CRUD.Code.UI
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox cmb_Estado;
+        private System.Windows.Forms.DateTimePicker dtp_DataNascimento;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton rdb_Outros;
+        private System.Windows.Forms.RadioButton rdb_Feminino;
+        private System.Windows.Forms.RadioButton rdb_Masculino;
+        private System.Windows.Forms.Label lbl_Sexo;
     }
 }

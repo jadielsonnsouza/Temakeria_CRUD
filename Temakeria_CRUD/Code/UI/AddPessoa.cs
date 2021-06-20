@@ -32,12 +32,12 @@ namespace Temakeria_CRUD.Code.UI
              * e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
-            
             Pessoa pessoa = new Pessoa();
             pessoa.adicionaCliente(txt_Nome.Text,
-                                   msk_dataNascimento.Text,
+                                   dtp_DataNascimento.Text,
                                    txt_RG.Text,
-                                   txt_CPF.Text);
+                                   txt_CPF.Text,
+                                   genero());
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
             Endereco endereco = new Endereco();
@@ -46,8 +46,11 @@ namespace Temakeria_CRUD.Code.UI
                                       txt_Complemento.Text,
                                       txt_Bairro.Text,
                                       txt_Cidade.Text,
-                                      txt_Estado.Text);
+                                      cmb_Estado.Text);
             TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
+            MessageBox.Show(insereTabelaEndereco.Mensagem);
+
+            
 
             //Contato contato = new Contato();
             //contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
@@ -70,7 +73,7 @@ namespace Temakeria_CRUD.Code.UI
             txt_Celular.Text = string.Empty;
             txt_Email.Text = string.Empty;
             txt_Endereco.Text = string.Empty;
-            msk_dataNascimento.Text = string.Empty;
+            dtp_DataNascimento.Text = string.Empty;
             txt_Numero.Text = string.Empty;
             txt_Bairro.Text = string.Empty;
             txt_RG.Text = string.Empty;
@@ -83,10 +86,13 @@ namespace Temakeria_CRUD.Code.UI
             txt_Pesquisar.Enabled = false;
 
             txt_Nome.Enabled = true;
-            msk_dataNascimento.Enabled = true;
+            dtp_DataNascimento.Enabled = true;
             txt_RG.Enabled = true;
             txt_CPF.Enabled = true;
-
+            rdb_Masculino.Enabled = true;
+            rdb_Feminino.Enabled = true;
+            rdb_Outros.Enabled = true;
+;
             txt_Email.Enabled = false;
             txt_Telefone.Enabled = false;
             txt_Celular.Enabled = false;
@@ -96,16 +102,19 @@ namespace Temakeria_CRUD.Code.UI
             txt_Complemento.Enabled = true;
             txt_Bairro.Enabled = true;
             txt_Cidade.Enabled = true;
-            txt_Estado.Enabled = true;
+            cmb_Estado.Enabled = true;
         }
         private void desabilitaTetBox()
         {
             txt_Pesquisar.Enabled = true;
 
             txt_Nome.Enabled = false;
-            msk_dataNascimento.Enabled = false;
+            dtp_DataNascimento.Enabled = false;
             txt_RG.Enabled = false;
             txt_CPF.Enabled = false;
+            rdb_Masculino.Enabled = false;
+            rdb_Feminino.Enabled = false;
+            rdb_Outros.Enabled = false;
 
             txt_Email.Enabled = false;
             txt_Telefone.Enabled = false;
@@ -116,8 +125,29 @@ namespace Temakeria_CRUD.Code.UI
             txt_Complemento.Enabled = false;
             txt_Bairro.Enabled = false;
             txt_Cidade.Enabled = false;
-            txt_Estado.Enabled = false;
+            cmb_Estado.Enabled = false;
             
+        }
+        private string genero()
+        {
+            string genero = "";
+            bool generoMasculino = rdb_Masculino.Checked;
+            bool generoFeminino = rdb_Feminino.Checked;
+            bool generoOutros = rdb_Outros.Checked;
+
+            if (generoMasculino == true)
+            {
+                genero = "Masculino";
+            }
+            else if (generoFeminino == true)
+            {
+                genero = "Feminino";
+            }
+            else
+            {
+                genero = "Outros";
+            }
+            return genero;
         }
     }
 }
