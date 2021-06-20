@@ -9,7 +9,7 @@ namespace Temakeria_CRUD.Code.CRUD
     {
         public string Mensagem { get; }
 
-        private string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf) " +
+        private const string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf) " +
                                                            "values (@nome, @data_nascimento, @rg, @cpf)";
 
         public TabelaPessoa(Pessoa pessoa)
