@@ -9,9 +9,11 @@ namespace Temakeria_CRUD.Code.Classes
 {
     class Contato
     {
+        TabelaContato tabelaConsulta = new TabelaContato();
         public string Telefone { get; private set; }
         public string Celular { get; private set; }
         public string Email { get; private set; }
+        public int IdContato { get; private set; }
 
         public void adicionaContato(string telefone,
                                     string celular,
@@ -19,7 +21,11 @@ namespace Temakeria_CRUD.Code.Classes
         {
             this.Telefone = telefone;
             this.Celular = celular;
-            this.Email = email;
+            this.Email = email;            
+        }
+        public void consultaIdContato()
+        {
+            this.IdContato = tabelaConsulta.consultaContato(this.Telefone, this.Celular, this.Email);
         }
     }
 }

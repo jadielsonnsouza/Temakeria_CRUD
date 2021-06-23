@@ -52,8 +52,8 @@ namespace Temakeria_CRUD.Code.UI
             Contato contato = new Contato();
             contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
             TabelaContato insereTabelaContato = new TabelaContato(contato);
-            int idContato = insereTabelaContato.consultaContato(contato);
-            MessageBox.Show("O Id de Contato é: " + idContato);
+            contato.consultaIdContato();
+            MessageBox.Show("O ID de Contato é : " + contato.IdContato);
 
             Limpar();
         }
