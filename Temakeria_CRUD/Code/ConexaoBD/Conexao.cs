@@ -18,7 +18,6 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             string conexaoSql = @"Data Source=DESKTOP-U8NKSVS\SQLEXPRESS;Initial Catalog=Temakeria_CRUD;Integrated Security=True";
             conexaoBD.ConnectionString = conexaoSql;
         }
-
         //Método que abre conexao com o BD
         private SqlConnection conectar()
         {
@@ -28,7 +27,6 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             }
             return conexaoBD;
         }
-
         //Método que fecha a conexao com o BD
         private void desconectar()
         {
@@ -36,9 +34,7 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             {
                 conexaoBD.Close();
             }
-        }
-
-        private string mensagem = "";
+        }                
         public string executaConexao(SqlCommand cmd)
         {
             try
@@ -53,13 +49,29 @@ namespace Temakeria_CRUD.Code.ConexaoBD
                 desconectar();
 
                 //mostra msg de erro ou sucesso
-                mensagem = "Cadastrado com Sucesso!";
-                return mensagem;
+                return "Cadastrado com Sucesso!";
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                mensagem = "Erro ao tentar se conectar com o Banco de Dados";
-                return mensagem;
+                return "Erro ao tentar se conectar com o Banco de Dados";
+            }
+        }
+
+        public SqlDataReader consultaConsultaBD(SqlCommand cmd)
+        {
+            try
+            {
+                // conectar com o BD(INSTACIAR CLASSE CONEXAO)
+                cmd.Connection = conectar();
+
+                SqlDataReader leituraDados = cmd.ExecuteReader();
+                leituraDados.Read();
+
+                return leituraDados;
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -87,7 +99,7 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             }
             catch (Exception e)
             {
-                this.Mensagem = e.Message;
+                //this.Mensagem = e.Message;
             }
         }
 
@@ -97,11 +109,8 @@ namespace Temakeria_CRUD.Code.ConexaoBD
             this.DataNascimento = Convert.ToString(leituraDados["data_nascimento"]);
             this.Rg = Convert.ToString(leituraDados["rg"]);
             this.Cpf = Convert.ToString(leituraDados["cpf"]);
-        }
-
-        private void consultaIdContato(SqlDataReader leituraDados)
-        {
-            this.Id_Contato = Convert.ToInt32(leituraDados["Id"]);
         }*/
+
+        
     }
 }

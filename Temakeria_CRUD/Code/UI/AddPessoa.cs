@@ -52,6 +52,10 @@ namespace Temakeria_CRUD.Code.UI
             Contato contato = new Contato();
             contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
             TabelaContato insereTabelaContato = new TabelaContato(contato);
+            int idContato = insereTabelaContato.consultaContato(contato);
+            MessageBox.Show("O Id de Contato é: " + idContato);
+
+            Limpar();
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -65,26 +69,7 @@ namespace Temakeria_CRUD.Code.UI
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
-            txt_Pesquisar.Text = string.Empty;
-
-            txt_Nome.Text = string.Empty;
-            dtp_DataNascimento.Text = string.Empty;
-            txt_RG.Text = string.Empty;
-            txt_CPF.Text = string.Empty;
-            rdb_Masculino.Checked = false;
-            rdb_Feminino.Checked = false;
-            rdb_Outros.Checked = false;
-
-            txt_Email.Text = string.Empty;
-            txt_Telefone.Text = string.Empty;
-            txt_Celular.Text = string.Empty;
-
-            txt_Endereco.Text = string.Empty;
-            txt_Numero.Text = string.Empty;
-            txt_Complemento.Text = string.Empty;
-            txt_Bairro.Text = string.Empty;
-            txt_Cidade.Text = string.Empty;
-            cmb_Estado.Text = string.Empty;
+            Limpar();
 
             desabilitaTetBox();
         }
@@ -155,6 +140,29 @@ namespace Temakeria_CRUD.Code.UI
                 genero = "Outros";
             }
             return genero;
+        }
+        private void Limpar()
+        {
+            txt_Pesquisar.Text = string.Empty;
+
+            txt_Nome.Text = string.Empty;
+            dtp_DataNascimento.Text = string.Empty;
+            txt_RG.Text = string.Empty;
+            txt_CPF.Text = string.Empty;
+            rdb_Masculino.Checked = false;
+            rdb_Feminino.Checked = false;
+            rdb_Outros.Checked = false;
+
+            txt_Email.Text = string.Empty;
+            txt_Telefone.Text = string.Empty;
+            txt_Celular.Text = string.Empty;
+
+            txt_Endereco.Text = string.Empty;
+            txt_Numero.Text = string.Empty;
+            txt_Complemento.Text = string.Empty;
+            txt_Bairro.Text = string.Empty;
+            txt_Cidade.Text = string.Empty;
+            cmb_Estado.Text = string.Empty;
         }
     }
 }
