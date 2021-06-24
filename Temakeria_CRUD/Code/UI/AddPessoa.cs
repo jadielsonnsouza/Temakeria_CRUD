@@ -28,8 +28,18 @@ namespace Temakeria_CRUD.Code.UI
         }
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            /*Cria o objeto do tipo pessoa 
-             * e chama método da classe tabela pessoa 
+            /*Cria o objeto do tipo Contato e chama método da classe tabela contato 
+             * para add uma pessoa no BD e retorna o id do contato pelo método consultaIdContato()
+             * para realizar o relacionamento na tabela pessoa;
+             */
+            Contato contato = new Contato();
+            contato.adicionaContato(txt_Telefone.Text,
+                                    txt_Celular.Text,
+                                    txt_Email.Text);
+            TabelaContato insereTabelaContato = new TabelaContato(contato);
+            int id_contato = contato.consultaIdContato();
+
+            /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
             Pessoa pessoa = new Pessoa();
@@ -37,6 +47,7 @@ namespace Temakeria_CRUD.Code.UI
                                    dtp_DataNascimento.Text,
                                    txt_RG.Text,
                                    txt_CPF.Text,
+                                   id_contato,
                                    genero());
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
@@ -49,11 +60,7 @@ namespace Temakeria_CRUD.Code.UI
                                       cmb_Estado.Text);
             TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);            
 
-            Contato contato = new Contato();
-            contato.adicionaContato(txt_Telefone.Text, txt_Celular.Text, txt_Email.Text);
-            TabelaContato insereTabelaContato = new TabelaContato(contato);
-            contato.consultaIdContato();
-            MessageBox.Show("O ID de Contato é : " + contato.IdContato);
+            
 
             Limpar();
         }

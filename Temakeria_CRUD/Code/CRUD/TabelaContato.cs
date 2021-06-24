@@ -36,12 +36,12 @@ namespace Temakeria_CRUD.Code.CRUD
             cmd.Parameters.AddWithValue("@celular", contato.Celular);
             cmd.Parameters.AddWithValue("@telefone", contato.Telefone);
             cmd.Parameters.AddWithValue("@email", contato.Email);
-            
+
             this.Mensagem = conexaoBD.executaConexao(cmd);
         }
-
         public int consultaContato(string telefone, string celular, string email)
         {
+
             cmd.CommandText = consultaTabelaContato;
 
             cmd.Parameters.AddWithValue("@celular", celular);
