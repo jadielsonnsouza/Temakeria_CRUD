@@ -26,7 +26,14 @@ namespace Temakeria_CRUD
         private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Chama o formulário de cadastro AddPessoa
-            AddPessoa adicionaPessoa = new AddPessoa();
+            AddPessoa adicionaPessoa = new AddPessoa(1);
+            adicionaPessoa.ShowDialog();
+        }
+
+        private void cadastroFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Chama o formulário de cadastro AddPessoa
+            AddPessoa adicionaPessoa = new AddPessoa(2);
             adicionaPessoa.ShowDialog();
         }
     }

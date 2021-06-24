@@ -15,12 +15,24 @@ namespace Temakeria_CRUD.Code.UI
 {
     public partial class AddPessoa : Form
     {
-
-        public AddPessoa()
+        private int id_tipo_pessoa = 0;
+        private string tipoPessoa = "";
+        public AddPessoa(int tipoPessoa)
         {
+            this.id_tipo_pessoa = tipoPessoa;
             InitializeComponent();
-
             desabilitaTetBox();
+
+            if (tipoPessoa == 1)
+            {
+                this.tipoPessoa = "Você está cadastrando um Cliente";
+            }
+            else
+            {
+                this.tipoPessoa = "Você está cadastrando um Funcionário";
+            }
+
+            MessageBox.Show(this.tipoPessoa);
         }
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
@@ -54,7 +66,6 @@ namespace Temakeria_CRUD.Code.UI
             int id_endereco = endereco.consultaIdEndereco();
 
 
-            const int id_tipo_pessoa = 1;
             /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
