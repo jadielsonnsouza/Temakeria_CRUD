@@ -8,6 +8,7 @@ namespace Temakeria_CRUD.Code.Classes
         public string DataNascimento { get; private set; }
         public string Rg { get; private set; }
         public string Cpf { get; private set; }
+        public int IdEndereco { get; private set; }
         public int IdContato { get; private set; }
         public string Genero { get; private set; }
 
@@ -15,6 +16,7 @@ namespace Temakeria_CRUD.Code.Classes
                                     string dataNascimento,
                                     string rg,
                                     string cpf,
+                                    int id_endereco,
                                     int id_contato,
                                     string genero)
         {
@@ -22,6 +24,7 @@ namespace Temakeria_CRUD.Code.Classes
             this.DataNascimento = dataNascimento;
             this.Rg = rg;
             this.Cpf = cpf;
+            this.IdEndereco = id_endereco;
             this.IdContato = id_contato;
             this.Genero = genero;
         }

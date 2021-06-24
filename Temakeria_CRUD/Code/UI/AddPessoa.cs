@@ -29,7 +29,7 @@ namespace Temakeria_CRUD.Code.UI
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
             /*Cria o objeto do tipo Contato e chama método da classe tabela contato 
-             * para add uma pessoa no BD e retorna o id do contato pelo método consultaIdContato()
+             * para add um contato no BD e retorna o id do contato pelo método consultaIdContato()
              * para realizar o relacionamento na tabela pessoa;
              */
             Contato contato = new Contato();
@@ -39,6 +39,20 @@ namespace Temakeria_CRUD.Code.UI
             TabelaContato insereTabelaContato = new TabelaContato(contato);
             int id_contato = contato.consultaIdContato();
 
+            /*Cria o objeto do tipo Endereco e chama método da classe tabela endereco 
+             * para add uma endereco no BD e retorna o id do endereco pelo método consultaIdEndereco()
+             * para realizar o relacionamento na tabela pessoa;
+             */
+            Endereco endereco = new Endereco();
+            endereco.adicionaEndereco(txt_Endereco.Text,
+                                      txt_Numero.Text,
+                                      txt_Complemento.Text,
+                                      txt_Bairro.Text,
+                                      txt_Cidade.Text,
+                                      cmb_Estado.Text);
+            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
+            int id_endereco = endereco.consultaIdEndereco();
+
             /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
@@ -47,18 +61,12 @@ namespace Temakeria_CRUD.Code.UI
                                    dtp_DataNascimento.Text,
                                    txt_RG.Text,
                                    txt_CPF.Text,
+                                   id_endereco,
                                    id_contato,
                                    genero());
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
-            Endereco endereco = new Endereco();
-            endereco.adicionaEndereco(txt_Endereco.Text,
-                                      txt_Numero.Text,
-                                      txt_Complemento.Text,
-                                      txt_Bairro.Text,
-                                      txt_Cidade.Text,
-                                      cmb_Estado.Text);
-            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);            
+                       
 
             
 

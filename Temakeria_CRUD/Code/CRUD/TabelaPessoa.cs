@@ -9,8 +9,8 @@ namespace Temakeria_CRUD.Code.CRUD
     {
         public string Mensagem { get; }
 
-        private const string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf, id_contato, genero) " +
-                                                           "values (@nome, @data_nascimento, @rg, @cpf, @id_contato, @genero)";
+        private const string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf, id_endereco, id_contato, genero) " +
+                                                           "values (@nome, @data_nascimento, @rg, @cpf, @id_endereco, @id_contato, @genero)";
 
         public TabelaPessoa(Pessoa pessoa)
         {
@@ -24,6 +24,7 @@ namespace Temakeria_CRUD.Code.CRUD
             cmd.Parameters.AddWithValue("@data_nascimento", pessoa.DataNascimento);
             cmd.Parameters.AddWithValue("@rg", pessoa.Rg);
             cmd.Parameters.AddWithValue("@cpf", pessoa.Cpf);
+            cmd.Parameters.AddWithValue("@id_endereco", pessoa.IdEndereco);
             cmd.Parameters.AddWithValue("@id_contato", pessoa.IdContato);
             cmd.Parameters.AddWithValue("@genero", pessoa.Genero);
 
