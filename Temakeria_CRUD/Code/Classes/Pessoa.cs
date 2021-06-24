@@ -10,6 +10,7 @@ namespace Temakeria_CRUD.Code.Classes
         public string Cpf { get; private set; }
         public int IdEndereco { get; private set; }
         public int IdContato { get; private set; }
+        public int IdTipoPessoa { get; private set; }
         public string Genero { get; private set; }
 
         public void adicionaCliente(string nome,
@@ -18,6 +19,7 @@ namespace Temakeria_CRUD.Code.Classes
                                     string cpf,
                                     int id_endereco,
                                     int id_contato,
+                                    int id_tipo_pessoa,
                                     string genero)
         {
             this.Nome = nome;
@@ -26,6 +28,7 @@ namespace Temakeria_CRUD.Code.Classes
             this.Cpf = cpf;
             this.IdEndereco = id_endereco;
             this.IdContato = id_contato;
+            this.IdTipoPessoa = id_tipo_pessoa;
             this.Genero = genero;
         }
     }

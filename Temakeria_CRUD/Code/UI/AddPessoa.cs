@@ -53,6 +53,8 @@ namespace Temakeria_CRUD.Code.UI
             TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
             int id_endereco = endereco.consultaIdEndereco();
 
+
+            const int id_tipo_pessoa = 1;
             /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
@@ -63,6 +65,7 @@ namespace Temakeria_CRUD.Code.UI
                                    txt_CPF.Text,
                                    id_endereco,
                                    id_contato,
+                                   id_tipo_pessoa,
                                    genero());
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
 
