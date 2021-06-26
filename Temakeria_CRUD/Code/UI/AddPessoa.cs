@@ -88,13 +88,16 @@ namespace Temakeria_CRUD.Code.UI
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            /*ConsultaCadastro consultaCadastro = new ConsultaCadastro();
-            consultaCadastro.consultaCadastro(txt_Pesquisar.Text, "pesquisa_usuario");
+            Pessoa pessoa = new Pessoa();
+            pessoa.consultaCliente(txt_Pesquisar.Text);
+            TabelaPessoa consultaTabelaPessoa = new TabelaPessoa();
+            consultaTabelaPessoa.consultaPessoa(pessoa);
             habilitaTextBox();
-            txt_Nome.Text = Convert.ToString(consultaCadastro.Nome);
-            msk_dataNascimento.Text = Convert.ToString(consultaCadastro.DataNascimento);
-            txt_RG.Text = Convert.ToString(consultaCadastro.Rg);
-            txt_CPF.Text = Convert.ToString(consultaCadastro.Cpf);*/
+
+            txt_Nome.Text = pessoa.Nome;
+            dtp_DataNascimento.Text = pessoa.DataNascimento;
+            txt_RG.Text = pessoa.Rg;
+            txt_CPF.Text = pessoa.Cpf;
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {

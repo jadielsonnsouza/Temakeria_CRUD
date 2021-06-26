@@ -4,14 +4,15 @@ namespace Temakeria_CRUD.Code.Classes
 {
     public class Pessoa
     {
-        public string Nome { get; private set; }
-        public string DataNascimento { get; private set; }
-        public string Rg { get; private set; }
-        public string Cpf { get; private set; }
+        public string Nome { get; set; }
+        public string DataNascimento { get; set; }
+        public string Rg { get; set; }
+        public string Cpf { get; set; }
         public int IdEndereco { get; private set; }
         public int IdContato { get; private set; }
         public int IdTipoPessoa { get; private set; }
         public string Genero { get; private set; }
+        public string Pesquisa { get; private set; }
 
         public void adicionaCliente(string nome,
                                     string dataNascimento,
@@ -30,6 +31,11 @@ namespace Temakeria_CRUD.Code.Classes
             this.IdContato = id_contato;
             this.IdTipoPessoa = id_tipo_pessoa;
             this.Genero = genero;
+        }
+
+        public void consultaCliente(string pesquisa)
+        {
+            this.Pesquisa = pesquisa;
         }
     }
 }
