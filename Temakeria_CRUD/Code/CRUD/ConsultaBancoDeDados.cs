@@ -11,10 +11,28 @@ namespace Temakeria_CRUD.Code.CRUD
 {
     class ConsultaBancoDeDados
     {
+        SqlCommand cmd = new SqlCommand();
+        Conexao conexaoBD = new Conexao();
+
+        private const string consultaBancoDeDados = "select" +
+                                                        " p.nome, p.data_nascimento, p.rg, p.cpf, p.genero," +
+                                                        " c.celular, c.telefone, c.email," +
+                                                        " e.rua, e.numero, e.complemento, e.bairro, e.cidade, e.estado " +
+                                                    "from Pessoa as p " +
+                                                    "left join Contato as c on p.id_contato = c.id " +
+                                                    "left join Endereco as e on p.id_endereco = e.id " +
+                                                    "where p.nome = @pesquisa";
+
         public ConsultaBancoDeDados(Pessoa pessoa)
         {
-            TabelaPessoa tabelaPessoa = new TabelaPessoa();
-            tabelaPessoa.consultaPessoa(pessoa);
+            TabelaPessoa consultaPessoa = new TabelaPessoa();
+
+            //Comando de insert no Banco de Dados
+            cmd.CommandText = consultaBancoDeDados;
+            cmd.Parameters.AddWithValue("@pesquisa", pessoa.Pesquisa);
+
+            SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
+            consultaPessoa.leituraTabelaPessoa(pessoa, leituraDados);
         }
     }
 }

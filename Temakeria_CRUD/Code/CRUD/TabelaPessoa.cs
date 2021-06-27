@@ -41,7 +41,11 @@ namespace Temakeria_CRUD.Code.CRUD
             cmd.CommandText = consultaTabelaPessoa;
             cmd.Parameters.AddWithValue("@nome", pessoa.Pesquisa);
             SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
+            leituraTabelaPessoa(pessoa, leituraDados);
+        }
 
+        public void leituraTabelaPessoa(Pessoa pessoa, SqlDataReader leituraDados)
+        {
             pessoa.Nome = Convert.ToString(leituraDados["nome"]);
             pessoa.DataNascimento = Convert.ToString(leituraDados["data_Nascimento"]);
             pessoa.Rg = Convert.ToString(leituraDados["rg"]);

@@ -17,6 +17,11 @@ namespace Temakeria_CRUD.Code.UI
     {
         private int id_tipo_pessoa = 0;
         private string tipoPessoa = "";
+
+        Contato contato = new Contato();
+        Pessoa pessoa = new Pessoa();
+        Endereco endereco = new Endereco();
+
         public AddPessoa(int tipoPessoa)
         {
             this.id_tipo_pessoa = tipoPessoa;
@@ -44,7 +49,6 @@ namespace Temakeria_CRUD.Code.UI
              * para add um contato no BD e retorna o id do contato pelo método consultaIdContato()
              * para realizar o relacionamento na tabela pessoa;
              */
-            Contato contato = new Contato();
             contato.adicionaContato(txt_Telefone.Text,
                                     txt_Celular.Text,
                                     txt_Email.Text);
@@ -55,7 +59,6 @@ namespace Temakeria_CRUD.Code.UI
              * para add uma endereco no BD e retorna o id do endereco pelo método consultaIdEndereco()
              * para realizar o relacionamento na tabela pessoa;
              */
-            Endereco endereco = new Endereco();
             endereco.adicionaEndereco(txt_Endereco.Text,
                                       txt_Numero.Text,
                                       txt_Complemento.Text,
@@ -69,7 +72,6 @@ namespace Temakeria_CRUD.Code.UI
             /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
              * para add uma pessoa no BD
              */
-            Pessoa pessoa = new Pessoa();
             pessoa.adicionaCliente(txt_Nome.Text,
                                    dtp_DataNascimento.Text,
                                    txt_RG.Text,
@@ -79,18 +81,13 @@ namespace Temakeria_CRUD.Code.UI
                                    id_tipo_pessoa,
                                    genero());
             TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
-
-                       
-
-            
-
             Limpar();
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            Pessoa pessoa = new Pessoa();
             pessoa.consultaCliente(txt_Pesquisar.Text);
             ConsultaBancoDeDados consultaBancoDeDados = new ConsultaBancoDeDados(pessoa);
+
             habilitaTextBox();
 
             txt_Nome.Text = pessoa.Nome;
@@ -98,7 +95,7 @@ namespace Temakeria_CRUD.Code.UI
             txt_RG.Text = pessoa.Rg;
             txt_CPF.Text = pessoa.Cpf;
             verificaGenero(pessoa.Genero);
-            
+
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
@@ -174,7 +171,6 @@ namespace Temakeria_CRUD.Code.UI
             }
             return genero;
         }
-
         public void verificaGenero(string genero)
         {
             if (genero == "Masculino")
@@ -185,9 +181,15 @@ namespace Temakeria_CRUD.Code.UI
             {
                 rdb_Feminino.Checked = true;
             }
-            else
+            else if (genero == "Outros")
             {
                 rdb_Outros.Checked = true;
+            }
+            else
+            {
+                rdb_Masculino.Checked = false;
+                rdb_Feminino.Checked = false;
+                rdb_Outros.Checked = false;
             }
         }
         private void Limpar()
