@@ -23,10 +23,10 @@ namespace Temakeria_CRUD.Code.Classes
             this.Celular = celular;
             this.Email = email;            
         }
-        public int consultaIdContato()
-        {
-            this.IdContato = tabelaConsulta.consultaContato(this.Telefone, this.Celular, this.Email);
-            return this.IdContato;
-        }
+        //public int consultaIdContato()
+        //{
+        //    this.IdContato = tabelaConsulta.consultaContato(this.Telefone, this.Celular, this.Email);
+        //    return this.IdContato;
+        //}
     }
 }

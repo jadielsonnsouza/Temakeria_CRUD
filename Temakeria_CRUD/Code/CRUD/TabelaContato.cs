@@ -20,9 +20,9 @@ namespace Temakeria_CRUD.Code.CRUD
                                                    "values (@celular, @telefone, @email)";
 
         private const string consultaTabelaContato = "select id from contato " +
-                                                    "where celular = @celularConsulta " +
-                                                    "and telefone = @telefoneConsulta " +
-                                                    "and email = @emailConsulta";
+                                                    "where celular = @celular " +
+                                                    "and telefone = @telefone " +
+                                                    "and email = @email";
 
         public TabelaContato()
         {
@@ -32,26 +32,30 @@ namespace Temakeria_CRUD.Code.CRUD
         {
             //Comando de insert no Banco de Dados
             cmd.CommandText = inseriTabelaContato;
+            this.Mensagem = conexaoBD.executaConexao(adicionaParametros(cmd, contato));
+            consultaContato(contato);
+        }
+        public void consultaContato(Contato contato)
+        {
+            cmd.CommandText = consultaTabelaContato;
+            SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
+            contato.IdContato = Convert.ToInt32(leituraDados["id"]);
+        }
 
+        private SqlCommand adicionaParametros(SqlCommand cmd, Contato contato)
+        {
             cmd.Parameters.AddWithValue("@celular", contato.Celular);
             cmd.Parameters.AddWithValue("@telefone", contato.Telefone);
             cmd.Parameters.AddWithValue("@email", contato.Email);
 
-            this.Mensagem = conexaoBD.executaConexao(cmd);
+            return cmd;
         }
-        public int consultaContato(string telefone, string celular, string email)
+
+        public void leituraTabelaContato(Contato contato, SqlDataReader leituraDados)
         {
-
-            cmd.CommandText = consultaTabelaContato;
-
-            cmd.Parameters.AddWithValue("@celularConsulta", celular);
-            cmd.Parameters.AddWithValue("@telefoneConsulta", telefone);
-            cmd.Parameters.AddWithValue("@emailConsulta", email);
-
-            SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
-            int idContato = Convert.ToInt32(leituraDados["id"]);
-
-            return idContato;
+            contato.Email = Convert.ToString(leituraDados["email"]);
+            contato.Celular = Convert.ToString(leituraDados["celular"]);
+            contato.Telefone = Convert.ToString(leituraDados["telefone"]);
         }
     }
 }
