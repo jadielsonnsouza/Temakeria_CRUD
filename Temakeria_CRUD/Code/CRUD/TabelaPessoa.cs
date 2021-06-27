@@ -11,7 +11,7 @@ namespace Temakeria_CRUD.Code.CRUD
         Conexao conexaoBD = new Conexao();
         public string Mensagem { get; }
 
-        private const string consultaTabelaPessao = "select * from Pessoa where nome = @nome";
+        private const string consultaTabelaPessoa = "select * from Pessoa where nome = @nome";
 
         private const string strInseriTabelaPessoa = "insert into Pessoa (nome, data_nascimento, rg, cpf, id_endereco, id_contato, id_tipo_pessoa, genero) " +
                                                            "values (@nome, @data_nascimento, @rg, @cpf, @id_endereco, @id_contato, @id_tipo_pessoa, @genero)";
@@ -38,7 +38,7 @@ namespace Temakeria_CRUD.Code.CRUD
         }
         public void consultaPessoa(Pessoa pessoa)
         {
-            cmd.CommandText = consultaTabelaPessao;
+            cmd.CommandText = consultaTabelaPessoa;
             cmd.Parameters.AddWithValue("@nome", pessoa.Pesquisa);
             SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
 
@@ -46,6 +46,7 @@ namespace Temakeria_CRUD.Code.CRUD
             pessoa.DataNascimento = Convert.ToString(leituraDados["data_Nascimento"]);
             pessoa.Rg = Convert.ToString(leituraDados["rg"]);
             pessoa.Cpf = Convert.ToString(leituraDados["cpf"]);
+            pessoa.Genero = Convert.ToString(leituraDados["genero"]);
         }
     }
 }

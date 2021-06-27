@@ -90,14 +90,15 @@ namespace Temakeria_CRUD.Code.UI
         {
             Pessoa pessoa = new Pessoa();
             pessoa.consultaCliente(txt_Pesquisar.Text);
-            TabelaPessoa consultaTabelaPessoa = new TabelaPessoa();
-            consultaTabelaPessoa.consultaPessoa(pessoa);
+            ConsultaBancoDeDados consultaBancoDeDados = new ConsultaBancoDeDados(pessoa);
             habilitaTextBox();
 
             txt_Nome.Text = pessoa.Nome;
             dtp_DataNascimento.Text = pessoa.DataNascimento;
             txt_RG.Text = pessoa.Rg;
             txt_CPF.Text = pessoa.Cpf;
+            verificaGenero(pessoa.Genero);
+            
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
@@ -172,6 +173,22 @@ namespace Temakeria_CRUD.Code.UI
                 genero = "Outros";
             }
             return genero;
+        }
+
+        public void verificaGenero(string genero)
+        {
+            if (genero == "Masculino")
+            {
+                rdb_Masculino.Checked = true;
+            }
+            else if (genero == "Feminino")
+            {
+                rdb_Feminino.Checked = true;
+            }
+            else
+            {
+                rdb_Outros.Checked = true;
+            }
         }
         private void Limpar()
         {

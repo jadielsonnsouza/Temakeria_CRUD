@@ -10,10 +10,10 @@ namespace Temakeria_CRUD.Code.Classes
     class Contato
     {
         TabelaContato tabelaConsulta = new TabelaContato();
-        public string Telefone { get; private set; }
-        public string Celular { get; private set; }
-        public string Email { get; private set; }
-        public int IdContato { get; private set; }
+        public string Telefone { get; set; }
+        public string Celular { get; set; }
+        public string Email { get; set; }
+        public int IdContato { get; set; }
 
         public void adicionaContato(string telefone,
                                     string celular,

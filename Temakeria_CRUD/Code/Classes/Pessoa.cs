@@ -11,8 +11,8 @@ namespace Temakeria_CRUD.Code.Classes
         public int IdEndereco { get; private set; }
         public int IdContato { get; private set; }
         public int IdTipoPessoa { get; private set; }
-        public string Genero { get; private set; }
-        public string Pesquisa { get; private set; }
+        public string Genero { get; set; }
+        public string Pesquisa { get; set; }
 
         public void adicionaCliente(string nome,
                                     string dataNascimento,
