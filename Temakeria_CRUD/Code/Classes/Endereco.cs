@@ -33,10 +33,10 @@ namespace Temakeria_CRUD.Code.Classes
             this.Estado = estado;
         }
 
-        public int consultaIdEndereco()
-        {
-            this.IdEndereco = tabelaConsulta.consultaEndereco(this.Rua, this.Numero, this.Complemento, this.Bairro);
-            return this.IdEndereco;
-        }
+        //public int consultaIdEndereco()
+        //{
+        //    this.IdEndereco = tabelaConsulta.consultaEndereco(this.Rua, this.Numero, this.Complemento, this.Bairro);
+        //    return this.IdEndereco;
+        //}
     }
 }

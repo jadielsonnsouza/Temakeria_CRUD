@@ -36,13 +36,6 @@ namespace Temakeria_CRUD.Code.CRUD
 
             this.Mensagem = conexaoBD.executaConexao(cmd);
         }
-        public void consultaPessoa(Pessoa pessoa)
-        {
-            cmd.CommandText = consultaTabelaPessoa;
-            cmd.Parameters.AddWithValue("@nome", pessoa.Pesquisa);
-            SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
-            leituraTabelaPessoa(pessoa, leituraDados);
-        }
 
         public void leituraTabelaPessoa(Pessoa pessoa, SqlDataReader leituraDados)
         {

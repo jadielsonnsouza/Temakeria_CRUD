@@ -20,9 +20,9 @@ namespace Temakeria_CRUD.Code.CRUD
                                                    "values (@celular, @telefone, @email)";
 
         private const string consultaTabelaContato = "select id from contato " +
-                                                    "where celular = @celular " +
-                                                    "and telefone = @telefone " +
-                                                    "and email = @email";
+                                                    "where celular = @celularConsulta " +
+                                                    "and telefone = @telefoneConsulta " +
+                                                    "and email = @emailConsulta";
 
         public TabelaContato()
         {
@@ -44,9 +44,9 @@ namespace Temakeria_CRUD.Code.CRUD
 
             cmd.CommandText = consultaTabelaContato;
 
-            cmd.Parameters.AddWithValue("@celular", celular);
-            cmd.Parameters.AddWithValue("@telefone", telefone);
-            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@celularConsulta", celular);
+            cmd.Parameters.AddWithValue("@telefoneConsulta", telefone);
+            cmd.Parameters.AddWithValue("@emailConsulta", email);
 
             SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
             int idContato = Convert.ToInt32(leituraDados["id"]);

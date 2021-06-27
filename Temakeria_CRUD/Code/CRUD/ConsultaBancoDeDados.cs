@@ -23,9 +23,10 @@ namespace Temakeria_CRUD.Code.CRUD
                                                     "left join Endereco as e on p.id_endereco = e.id " +
                                                     "where p.nome = @pesquisa";
 
-        public ConsultaBancoDeDados(Pessoa pessoa)
+        public ConsultaBancoDeDados(Pessoa pessoa, Endereco endereco)
         {
             TabelaPessoa consultaPessoa = new TabelaPessoa();
+            TabelaEndereco consultaEndereco = new TabelaEndereco();
 
             //Comando de insert no Banco de Dados
             cmd.CommandText = consultaBancoDeDados;
@@ -33,6 +34,7 @@ namespace Temakeria_CRUD.Code.CRUD
 
             SqlDataReader leituraDados = conexaoBD.consultaConsultaBD(cmd);
             consultaPessoa.leituraTabelaPessoa(pessoa, leituraDados);
+            consultaEndereco.leituraTabelaEndereco(endereco, leituraDados);
         }
     }
 }

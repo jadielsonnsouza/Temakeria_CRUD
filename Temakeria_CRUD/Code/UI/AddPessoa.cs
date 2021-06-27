@@ -66,7 +66,8 @@ namespace Temakeria_CRUD.Code.UI
                                       txt_Cidade.Text,
                                       cmb_Estado.Text);
             TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
-            int id_endereco = endereco.consultaIdEndereco();
+            //insereTabelaEndereco.consultaEndereco(endereco);
+            //int id_endereco = endereco.consultaIdEndereco();
 
 
             /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
@@ -76,7 +77,7 @@ namespace Temakeria_CRUD.Code.UI
                                    dtp_DataNascimento.Text,
                                    txt_RG.Text,
                                    txt_CPF.Text,
-                                   id_endereco,
+                                   endereco.IdEndereco,
                                    id_contato,
                                    id_tipo_pessoa,
                                    genero());
@@ -86,7 +87,7 @@ namespace Temakeria_CRUD.Code.UI
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
             pessoa.consultaCliente(txt_Pesquisar.Text);
-            ConsultaBancoDeDados consultaBancoDeDados = new ConsultaBancoDeDados(pessoa);
+            ConsultaBancoDeDados consultaBancoDeDados = new ConsultaBancoDeDados(pessoa, endereco);
 
             habilitaTextBox();
 
@@ -96,6 +97,12 @@ namespace Temakeria_CRUD.Code.UI
             txt_CPF.Text = pessoa.Cpf;
             verificaGenero(pessoa.Genero);
 
+            txt_Endereco.Text = endereco.Rua;
+            txt_Numero.Text = endereco.Numero;
+            txt_Complemento.Text = endereco.Complemento;
+            txt_Bairro.Text = endereco.Bairro;
+            txt_Cidade.Text = endereco.Cidade;
+            cmb_Estado.Text = endereco.Estado;
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
