@@ -17,6 +17,7 @@ namespace Temakeria_CRUD.Code.UI
     {
         private int id_tipo_pessoa = 0;
         private string tipoPessoa = "";
+        private bool btnCadastrarAtivo = false;
 
         Contato contato = new Contato();
         Pessoa pessoa = new Pessoa();
@@ -41,48 +42,56 @@ namespace Temakeria_CRUD.Code.UI
         }
         private void btn_Cadastrar_Click(object sender, EventArgs e)
         {
+            btnCadastrarAtivo = true;
             habilitaTextBox();
         }
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            /*Cria o objeto do tipo Contato e chama método da classe tabela contato 
+            if (btnCadastrarAtivo == true)
+            {
+                /*Cria o objeto do tipo Contato e chama método da classe tabela contato 
              * para add um contato no BD e retorna o id do contato pelo método consultaIdContato()
              * para realizar o relacionamento na tabela pessoa;
              */
-            contato.adicionaContato(txt_Telefone.Text,
-                                    txt_Celular.Text,
-                                    txt_Email.Text);
-            TabelaContato insereTabelaContato = new TabelaContato(contato);
-            //int id_contato = contato.consultaIdContato();
+                contato.adicionaContato(txt_Telefone.Text,
+                                        txt_Celular.Text,
+                                        txt_Email.Text);
+                TabelaContato insereTabelaContato = new TabelaContato(contato);
+                //int id_contato = contato.consultaIdContato();
 
-            /*Cria o objeto do tipo Endereco e chama método da classe tabela endereco 
-             * para add uma endereco no BD e retorna o id do endereco pelo método consultaIdEndereco()
-             * para realizar o relacionamento na tabela pessoa;
-             */
-            endereco.adicionaEndereco(txt_Endereco.Text,
-                                      txt_Numero.Text,
-                                      txt_Complemento.Text,
-                                      txt_Bairro.Text,
-                                      txt_Cidade.Text,
-                                      cmb_Estado.Text);
-            TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
-            //insereTabelaEndereco.consultaEndereco(endereco);
-            //int id_endereco = endereco.consultaIdEndereco();
+                /*Cria o objeto do tipo Endereco e chama método da classe tabela endereco 
+                 * para add uma endereco no BD e retorna o id do endereco pelo método consultaIdEndereco()
+                 * para realizar o relacionamento na tabela pessoa;
+                 */
+                endereco.adicionaEndereco(txt_Endereco.Text,
+                                          txt_Numero.Text,
+                                          txt_Complemento.Text,
+                                          txt_Bairro.Text,
+                                          txt_Cidade.Text,
+                                          cmb_Estado.Text);
+                TabelaEndereco insereTabelaEndereco = new TabelaEndereco(endereco);
+                //insereTabelaEndereco.consultaEndereco(endereco);
+                //int id_endereco = endereco.consultaIdEndereco();
 
 
-            /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
-             * para add uma pessoa no BD
-             */
-            pessoa.adicionaCliente(txt_Nome.Text,
-                                   dtp_DataNascimento.Text,
-                                   txt_RG.Text,
-                                   txt_CPF.Text,
-                                   endereco.IdEndereco,
-                                   contato.IdContato,
-                                   id_tipo_pessoa,
-                                   genero());
-            TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
-            Limpar();
+                /*Cria o objeto do tipo pessoa e chama método da classe tabela pessoa 
+                 * para add uma pessoa no BD
+                 */
+                pessoa.adicionaCliente(txt_Nome.Text,
+                                       dtp_DataNascimento.Text,
+                                       txt_RG.Text,
+                                       txt_CPF.Text,
+                                       endereco.IdEndereco,
+                                       contato.IdContato,
+                                       id_tipo_pessoa,
+                                       genero());
+                TabelaPessoa inseretabelaPessoa = new TabelaPessoa(pessoa);
+                Limpar();
+            }
+            else
+            {
+                MessageBox.Show("Selecione o botão cadastrar para inserir um novo cadastro!");
+            }
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -111,7 +120,7 @@ namespace Temakeria_CRUD.Code.UI
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
             Limpar();
-
+            btnCadastrarAtivo = false;
             desabilitaTetBox();
         }
         private void habilitaTextBox()
@@ -226,5 +235,7 @@ namespace Temakeria_CRUD.Code.UI
             txt_Cidade.Text = string.Empty;
             cmb_Estado.Text = string.Empty;
         }
+
+        
     }
 }
